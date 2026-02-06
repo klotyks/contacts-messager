@@ -1,6 +1,7 @@
 function generateContacts(contact) {
-  return `<li
+  return `<li onclick="onClickOpenDetails(event)"
   href="#modal2"
+  id="${contact.id}"
   class="contact modal-trigger collection-item transparent waves-effect"
 >
   <div class="container">

@@ -16,7 +16,22 @@ function onClickStar() {
     '#modal2 .top.teal .row .right-align span',
   )
   elSpan.classList.add('non-fill')
-  handleAddFavourite()
+  const elContactDetailId = document.querySelector('.contact-detail')
+  const id = elContactDetailId.getAttribute('id')
+
+  handleAddFavourite(id)
+}
+
+function onClickDeleteContact() {
+  const elContactDetailId = document.querySelector('.contact-detail')
+  const id = elContactDetailId.getAttribute('id')
+  handleRemove(+id)
+}
+
+function onClickOpenDetails(e) {
+  const id = +e.currentTarget.id
+  console.log(id)
+  handleOpenDetails(id)
 }
 
 const elButtonAddContact = document.querySelector('#appAddContact')
@@ -29,3 +44,8 @@ const elSpanStar = document.querySelector(
   '#modal2 .top.teal .row .right-align span',
 )
 elSpanStar.onclick = onClickStar
+
+const elSpanDeleteContact = document.querySelector(
+  '#modal2 .top.teal .row .right-align span + span + span',
+)
+elSpanDeleteContact.onclick = onClickDeleteContact

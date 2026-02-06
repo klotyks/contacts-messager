@@ -24,32 +24,33 @@ function addContact(name, surname, phonenumber) {
   contacts.push(contact)
 }
 
-function addFavorite(name, surname) {
-  const contact = createContact(name, surname)
+function addContactToFavoritesById(id) {
+  const findedContact = contacts.find(c => c.id === id)
+  favorites.push(findedContact)
 
-  let alreadyInFavorites = false
+  // let alreadyInFavorites = false
 
-  for (const fav of favorites) {
-    if (fav.id === id) {
-      alreadyInFavorites = true
-    }
-  }
-  if (!alreadyInFavorites) {
-    favorites.push(contact)
-    console.log(`Контакт ${name} ${surname} добавлен в избранное!`)
-  } else {
-    console.log(`Контакт ${name} ${surname} уже есть в избранном.`)
-  }
+  // for (const fav of favorites) {
+  //   if (fav.id === id) {
+  //     alreadyInFavorites = true
+  //   }
+  // }
+  // if (!alreadyInFavorites) {
+  //   favorites.push(contact)
+  //   console.log(`Контакт ${name} ${surname} добавлен в избранное!`)
+  // } else {
+  //   console.log(`Контакт ${name} ${surname} уже есть в избранном.`)
+  // }
 }
 
-function removeFromFavorites(id) {
+function removeFromFavoritesById(id) {
   const index = favorites.findIndex(fav => fav.id === id)
   if (index > -1) {
     favorites.splice(index, 1)
   }
 }
 
-function removeFromContact(id) {
+function removeFromContactById(id) {
   const index = contacts.findIndex(con => con.id === id)
   if (index > -1) {
     contacts.splice(index, 1)
@@ -77,8 +78,13 @@ function howLongAgo(milSec) {
   if (seconds < 60) return seconds
 }
 // addContact('Vasya', 'Firma', 12393)
-// addContact('Petya', 'Golem', 12393)
-
+contacts
+addContact('Petya', 'Golem', 12393)
+addContact('Pavel', 'Durov', 12393)
+contacts
+favorites
+addContactToFavoritesById('Petya', 'Golem', 12393)
+favorites
 // contacts
 // console.log(findContact('Go'))
 // addFavorite('Vasya', 'F', 12393)

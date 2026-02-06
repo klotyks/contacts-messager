@@ -1,8 +1,12 @@
 function handleAddContact(name, surname, phonenumber) {
   addContact(name, surname, phonenumber)
-  renderContactDetail({ name, surname, phonenumber })
   renderInputAddContact()
-  renderAddContactToContacts(contacts)
+  renderContacts(contacts)
+}
+
+function handleOpenDetails(id) {
+  selectContactById(id)
+  renderContactDetail(selectedContact)
 }
 
 function handleCall(phonenumber) {
@@ -13,8 +17,16 @@ function handleCall(phonenumber) {
 function handleRenderRecents() {
   renderRecents(recents)
 }
-function handleAddFavourite() {
-  renderAddContactToContacts(favorites)
+function handleAddFavourite(id) {
+  addContactToFavoritesById(id)
+  renderAddContactToFavourites(favorites)
+}
+
+function handleRemove(id) {
+  removeFromContactById(id)
+  renderContacts(contacts)
 }
 
 setInterval(handleRenderRecents, 3000)
+
+handleAddContact('Vasya', 'Firma', '12393')
