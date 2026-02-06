@@ -60,7 +60,7 @@ function removeFromContactById(id) {
 function findContact(searchText) {
   let props = ['name', 'surname']
   return contacts.filter(contact =>
-    props.some(p => contact[p].includes(searchText)),
+    props.some(p => contact[p].includes(searchText))
   )
 }
 
@@ -79,8 +79,9 @@ function howLongAgo(milSec) {
 }
 // addContact('Vasya', 'Firma', 12393)
 contacts
-addContact('Petya', 'Golem', 12393)
-addContact('Pavel', 'Durov', 12393)
+addContact('Petya', 'Golem', '+380991234567')
+addContact('Pavel', 'Durov', '+380995555555')
+addContact('Vasya', 'Firma', '+380997654321')
 contacts
 favorites
 addContactToFavoritesById('Petya', 'Golem', 12393)
@@ -91,3 +92,6 @@ favorites
 // favorites
 // removeFromFavorites(12393)
 // favorites
+
+// рендер функцию можно вызвать 1раз или 101раз
+// если в моделях ничего не поменялось, то рендер ничего нового не нарисует

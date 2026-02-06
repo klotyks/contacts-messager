@@ -1,6 +1,6 @@
 function handleAddContact(name, surname, phonenumber) {
   addContact(name, surname, phonenumber)
-  renderInputAddContact()
+  renderContactAdder()
   renderContacts(contacts)
 }
 
@@ -28,5 +28,4 @@ function handleRemove(id) {
 }
 
 setInterval(handleRenderRecents, 3000)
-
-handleAddContact('Vasya', 'Firma', '12393')
+renderContacts(contacts)

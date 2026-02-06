@@ -14,7 +14,7 @@ function renderRecents(recents) {
   }
 }
 
-function renderInputAddContact() {
+function renderContactAdder() {
   const elInputName = document.querySelector('#firstName')
   const elInputSurname = document.querySelector('#secondName')
   const elInputPhonenumber = document.querySelector('#phone')
