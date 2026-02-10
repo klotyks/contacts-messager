@@ -40,6 +40,13 @@ function renderAddContactToFavourites(favorites) {
   }
 }
 
+function renderOnClickedStar() {
+  const elSpan = document.querySelector(
+    '#modal2 .top.teal .row .right-align span',
+  )
+  elSpan.classList.add('non-fill')
+}
+
 // function renderOpenDetails(nameSurname, phone) {
 //   const nameAndSurname = document.querySelector('#modal2 h5')
 //   const phonenumber = document.querySelector('#modal2 b')

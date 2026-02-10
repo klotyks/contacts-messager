@@ -19,6 +19,7 @@ function handleRenderRecents() {
 }
 function handleAddFavourite(id) {
   addContactToFavoritesById(id)
+  renderOnClickedStar()
   renderAddContactToFavourites(favorites)
 }
 
