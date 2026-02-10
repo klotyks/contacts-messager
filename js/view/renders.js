@@ -23,28 +23,25 @@ function renderContactAdder() {
   elInputPhonenumber.value = ''
 }
 
-function renderContactDetail(contact) {
+function renderContactDetail(contact, isFav) {
   const elDivContactDetail = document.querySelector('.contact-detail')
   const elH5Name = elDivContactDetail.querySelector('h5')
   const elB = elDivContactDetail.querySelector('b')
   elDivContactDetail.setAttribute('id', contact.id)
   elH5Name.textContent = contact.name + ' ' + contact.surname
   elB.textContent = contact.phonenumber
+  const elSpan = document.querySelector('#modal2 .right-align span')
+  if (isFav) elSpan.classList.remove('non-fill')
+  else elSpan.classList.add('non-fill')
 }
-function renderAddContactToFavourites(favorites) {
+
+function renderFavoritesList(favorites) {
   const elDivFavourite = document.querySelector('.favorite')
   elDivFavourite.innerHTML = ''
   for (const favourite of favorites) {
     console.log(favourite)
     elDivFavourite.innerHTML += generateFavourites(favourite)
   }
-}
-
-function renderOnClickedStar() {
-  const elSpan = document.querySelector(
-    '#modal2 .top.teal .row .right-align span',
-  )
-  elSpan.classList.add('non-fill')
 }
 
 // function renderOpenDetails(nameSurname, phone) {

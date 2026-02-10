@@ -19,8 +19,8 @@ function handleRenderRecents() {
 }
 function handleAddFavourite(id) {
   addContactToFavoritesById(id)
-  renderOnClickedStar()
-  renderAddContactToFavourites(favorites)
+  renderContactDetail(selectedContact, true)
+  renderFavoritesList(favorites)
 }
 
 function handleRemove(id) {

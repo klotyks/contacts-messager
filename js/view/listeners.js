@@ -29,7 +29,7 @@ function onClickDeleteContact() {
 }
 
 function onClickOpenDetails(e) {
-  const id = e.curretTarget.id
+  const id = e.currentTarget.id
   handleOpenDetails(+id)
 }
 
@@ -43,6 +43,6 @@ const elSpanStar = document.querySelector('#modal2 .right-align span')
 elSpanStar.onclick = onClickStar
 
 const elSpanDeleteContact = document.querySelector(
-  '#modal2 .right-align span:nth-child(3)',
+  '#modal2 .right-align span:nth-child(3)'
 )
 elSpanDeleteContact.onclick = onClickDeleteContact
