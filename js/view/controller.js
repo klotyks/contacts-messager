@@ -6,7 +6,8 @@ function handleAddContact(name, surname, phonenumber) {
 
 function handleOpenDetails(id) {
   selectContactById(id)
-  renderContactDetail(selectedContact)
+  const isFavorite = favorites.some(fav => fav.id === id)
+  renderContactDetail(selectedContact, isFavorite)
 }
 
 function handleCall(phonenumber) {
@@ -17,9 +18,10 @@ function handleCall(phonenumber) {
 function handleRenderRecents() {
   renderRecents(recents)
 }
+
 function handleAddFavourite(id) {
   addContactToFavoritesById(id)
-  renderContactDetail(selectedContact, true)
+  // renderContactDetail(selectedContact, true)
   renderFavoritesList(favorites)
 }
 
