@@ -36,11 +36,11 @@ function renderContactDetail(contact, isFav) {
 }
 
 function renderFavoritesList(favorites) {
+  console.log(favorites)
   const elDivFavourite = document.querySelector('.favorite')
   elDivFavourite.innerHTML = ''
-  for (const favourite of favorites) {
-    console.log(favourite)
-    elDivFavourite.innerHTML += generateFavourites(favourite)
+  for (const favorite of favorites) {
+    elDivFavourite.innerHTML += generateFavourites(favorite)
   }
 }
 

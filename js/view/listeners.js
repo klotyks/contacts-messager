@@ -19,6 +19,7 @@ function onClickStar() {
 
   const elContactDetailId = document.querySelector('.contact-detail')
   const id = elContactDetailId.getAttribute('id')
+  console.log(id)
   handleAddFavourite(+id)
 }
 
@@ -43,6 +44,6 @@ const elSpanStar = document.querySelector('#modal2 .right-align span')
 elSpanStar.onclick = onClickStar
 
 const elSpanDeleteContact = document.querySelector(
-  '#modal2 .right-align span:nth-child(3)'
+  '#modal2 .right-align span:nth-child(3)',
 )
 elSpanDeleteContact.onclick = onClickDeleteContact

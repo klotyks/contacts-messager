@@ -60,7 +60,7 @@ function removeFromContactById(id) {
 function findContact(searchText) {
   let props = ['name', 'surname']
   return contacts.filter(contact =>
-    props.some(p => contact[p].includes(searchText))
+    props.some(p => contact[p].includes(searchText)),
   )
 }
 
@@ -78,14 +78,15 @@ function howLongAgo(milSec) {
   if (seconds < 60) return seconds
 }
 // addContact('Vasya', 'Firma', 12393)
-contacts
+// contacts
 addContact('Petya', 'Golem', '+380991234567')
 addContact('Pavel', 'Durov', '+380995555555')
-addContact('Vasya', 'Firma', '+380997654321')
-contacts
-favorites
-addContactToFavoritesById('Petya', 'Golem', 12393)
-favorites
+// addContact('Vasya', 'Firma', '+380997654321')
+// contacts
+// favorites
+// console.log(contacts[0].id)
+// addContactToFavoritesById(contacts[0].id)
+// favorites
 // contacts
 // console.log(findContact('Go'))
 // addFavorite('Vasya', 'F', 12393)
