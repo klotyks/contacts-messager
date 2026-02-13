@@ -19,11 +19,36 @@ function handleRenderRecents() {
   renderRecents(recents)
 }
 
-function handleAddFavourite(id) {
-  addContactToFavoritesById(id)
-  // renderContactDetail(selectedContact, true)
+function handleToggleFavorite(id) {
+  const isFavorite = favorites.some(f => f.id === id)
+
+  if (isFavorite) {
+    favorites = favorites.filter(f => f.id !== id)
+  } else {
+    const contact = contacts.find(c => c.id === id)
+    if (contact) favorites.push(contact)
+    else return
+  }
+
   renderFavoritesList(favorites)
+
+  if (selectedContact?.id === id) {
+    renderContactDetail(
+      selectedContact,
+      favorites.some(f => f.id === id),
+    )
+  }
 }
+
+// function handleAddFavourite(id) {
+//   addContactToFavoritesById(id)
+//   renderFavoritesList(favorites)
+// }
+
+// function handleRemoveFavorite(id) {
+//   removeFromFavoritesById(id)
+//   renderFavoritesList(favorites)
+// }
 
 function handleRemove(id) {
   removeFromContactById(id)

@@ -1,4 +1,4 @@
-const favorites = []
+let favorites = []
 const recents = []
 const contacts = []
 let selectedContact = null
@@ -25,6 +25,7 @@ function addContact(name, surname, phonenumber) {
 }
 
 function addContactToFavoritesById(id) {
+  if (favorites.find(c => c.id === id)) return
   const findedContact = contacts.find(c => c.id === id)
   favorites.push(findedContact)
 

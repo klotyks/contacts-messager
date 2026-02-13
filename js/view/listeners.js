@@ -20,7 +20,7 @@ function onClickStar() {
   const elContactDetailId = document.querySelector('.contact-detail')
   const id = elContactDetailId.getAttribute('id')
   console.log(id)
-  handleAddFavourite(+id)
+  handleToggleFavorite(+id)
 }
 
 function onClickDeleteContact() {
