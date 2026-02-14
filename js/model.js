@@ -44,6 +44,21 @@ function addContactToFavoritesById(id) {
   // }
 }
 
+function toggleFavorite(id) {
+  const index = favorites.findIndex(f => f.id === id)
+  if (index !== -1) {
+    favorites.splice(index, 1) // удалить
+    return false // был избранным → теперь нет
+  } else {
+    const contact = contacts.find(c => c.id === id)
+    if (contact) {
+      favorites.push(contact)
+      return true // стал избранным
+    }
+    return false
+  }
+}
+
 function removeFromFavoritesById(id) {
   const index = favorites.findIndex(fav => fav.id === id)
   if (index > -1) {

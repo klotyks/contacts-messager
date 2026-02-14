@@ -20,23 +20,11 @@ function handleRenderRecents() {
 }
 
 function handleToggleFavorite(id) {
-  const isFavorite = favorites.some(f => f.id === id)
-
-  if (isFavorite) {
-    favorites = favorites.filter(f => f.id !== id)
-  } else {
-    const contact = contacts.find(c => c.id === id)
-    if (contact) favorites.push(contact)
-    else return
-  }
-
-  renderFavoritesList(favorites)
+  const nowIsFavorite = toggleFavorite(id)
+  renderFavouritesList(favorites)
 
   if (selectedContact?.id === id) {
-    renderContactDetail(
-      selectedContact,
-      favorites.some(f => f.id === id),
-    )
+    renderContactDetail(selectedContact, nowIsFavorite)
   }
 }
 
