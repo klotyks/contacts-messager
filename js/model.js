@@ -5,7 +5,7 @@ let selectedContact = null
 
 function createContact(name, surname, phonenumber) {
   return {
-    id: Math.floor(Math.random() * 10000000000000),
+    id: Math.floor(Math.random() * 100000),
     name: name,
     surname: surname,
     phonenumber: phonenumber,
@@ -44,27 +44,23 @@ function addContactToFavoritesById(id) {
   // }
 }
 
-function toggleFavorite(id) {
-  const index = favorites.findIndex(f => f.id === id)
-  if (index !== -1) {
-    favorites.splice(index, 1) // удалить
-    return false // был избранным → теперь нет
-  } else {
-    const contact = contacts.find(c => c.id === id)
-    if (contact) {
-      favorites.push(contact)
-      return true // стал избранным
-    }
-    return false
-  }
+function addFavoriteById(id) {
+  const contact = contacts.find(c => c.id === id)
+  if (contact && !isFavoriteById(id)) favorites.push(contact)
+}
+function removeFavoriteById(id) {
+  favorites = favorites.filter(f => f.id !== id)
+}
+function isFavoriteById(id) {
+  return favorites.some(f => f.id === id)
 }
 
-function removeFromFavoritesById(id) {
-  const index = favorites.findIndex(fav => fav.id === id)
-  if (index > -1) {
-    favorites.splice(index, 1)
-  }
-}
+// function removeFromFavoritesById(id) {
+//   const index = favorites.findIndex(fav => fav.id === id)
+//   if (index > -1) {
+//     favorites.splice(index, 1)
+//   }
+// }
 
 function removeFromContactById(id) {
   const index = contacts.findIndex(con => con.id === id)
@@ -76,7 +72,7 @@ function removeFromContactById(id) {
 function findContact(searchText) {
   let props = ['name', 'surname']
   return contacts.filter(contact =>
-    props.some(p => contact[p].includes(searchText)),
+    props.some(p => contact[p].includes(searchText))
   )
 }
 
@@ -97,8 +93,30 @@ function howLongAgo(milSec) {
 // contacts
 addContact('Petya', 'Golem', '+380991234567')
 addContact('Pavel', 'Durov', '+380995555555')
-// addContact('Vasya', 'Firma', '+380997654321')
-// contacts
+addContact('Vasya', 'Firma', '+380997654321')
+
+console.log(favorites.map(c => [c.name, c.id]))
+
+addFavoriteById(contacts[0].id)
+console.log(favorites.map(c => [c.name, c.id]))
+
+addFavoriteById(contacts[0].id)
+console.log(favorites.map(c => [c.name, c.id]))
+
+addFavoriteById(1234)
+console.log(favorites.map(c => [c.name, c.id]))
+
+removeFavoriteById(contacts[0].id)
+console.log(favorites.map(c => [c.name, c.id]))
+
+removeFavoriteById(contacts[0].id)
+console.log(favorites.map(c => [c.name, c.id]))
+
+removeFavoriteById(1234)
+console.log(favorites.map(c => [c.name, c.id]))
+
+//
+
 // favorites
 // console.log(contacts[0].id)
 // addContactToFavoritesById(contacts[0].id)

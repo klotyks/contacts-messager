@@ -20,12 +20,10 @@ function handleRenderRecents() {
 }
 
 function handleToggleFavorite(id) {
-  const nowIsFavorite = toggleFavorite(id)
-  renderFavouritesList(favorites)
-
-  if (selectedContact?.id === id) {
-    renderContactDetail(selectedContact, nowIsFavorite)
-  }
+  if (isFavoriteById(id)) removeFavoriteById(id)
+  else addFavoriteById(id)
+  renderFavoritesList(favorites)
+  renderContactDetail(selectedContact, isFavoriteById(id))
 }
 
 // function handleAddFavourite(id) {
