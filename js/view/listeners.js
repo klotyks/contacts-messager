@@ -5,6 +5,13 @@ function onClickAddContact() {
   handleAddContact(name, surname, phonenumber)
 }
 
+function onClickEditContact() {
+  const name = document.querySelector('#firstName').value
+  const surname = document.querySelector('#secondName').value
+  const phonenumber = document.querySelector('#phone').value
+  handleEditContact(name, surname, phonenumber)
+}
+
 function onClickCall() {
   const elLi = document.querySelector('.contact-detail li')
   const elB = elLi.querySelector('b')
@@ -47,3 +54,8 @@ const elSpanDeleteContact = document.querySelector(
   '#modal2 .right-align span:nth-child(3)',
 )
 elSpanDeleteContact.onclick = onClickDeleteContact
+
+const elSpanEditContact = document.querySelector(
+  '#modal2 .right-align span:nth-child(2)',
+)
+elSpanEditContact.onclick = onClickEditContact

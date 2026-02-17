@@ -24,6 +24,15 @@ function addContact(name, surname, phonenumber) {
   contacts.push(contact)
 }
 
+function editContact(id, name, surname, phonenumber) {
+  const contact = contacts.find(c => c.id === id)
+  if (!contact) return
+  contact.id = id
+  contact.name = name
+  contact.surname = surname
+  contact.phonenumber = phonenumber
+}
+
 function addContactToFavoritesById(id) {
   if (favorites.find(c => c.id === id)) return
   const findedContact = contacts.find(c => c.id === id)
@@ -72,7 +81,7 @@ function removeFromContactById(id) {
 function findContact(searchText) {
   let props = ['name', 'surname']
   return contacts.filter(contact =>
-    props.some(p => contact[p].includes(searchText))
+    props.some(p => contact[p].includes(searchText)),
   )
 }
 

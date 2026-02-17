@@ -3,6 +3,10 @@ function handleAddContact(name, surname, phonenumber) {
   renderContactAdder()
   renderContacts(contacts)
 }
+function handleEditContact(id, name, surname, phonenumber) {
+  editContact(id, name, surname, phonenumber)
+  renderContacts(contacts)
+}
 
 function handleOpenDetails(id) {
   selectContactById(id)
