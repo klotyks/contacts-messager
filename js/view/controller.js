@@ -3,13 +3,17 @@ function handleAddContact(name, surname, phonenumber) {
   renderContactAdder()
   renderContacts(contacts)
 }
-function handleEditContact(id, name, surname, phonenumber) {
-  editContact(id, name, surname, phonenumber)
-  const contact = contacts.find(c => c.id === id)
+
+// handleOpenContactEditing
+// handleSaveEditedContact
+
+function handleEditContact(id) {
+  // const contact = editContact(id, name, surname, phonenumber)
   renderModal0EditContact(contact)
   renderContacts(contacts)
 }
 
+// handleOpenContactDetails
 function handleOpenDetails(id) {
   selectContactById(id)
   const isFavorite = favorites.some(fav => fav.id === id)
@@ -21,7 +25,7 @@ function handleCall(phonenumber) {
   renderRecents(recents)
 }
 
-function handleRenderRecents() {
+function handleUpdateRecents() {
   renderRecents(recents)
 }
 
@@ -47,5 +51,5 @@ function handleRemove(id) {
   renderContacts(contacts)
 }
 
-setInterval(handleRenderRecents, 3000)
+setInterval(handleUpdateRecents, 3000)
 renderContacts(contacts)

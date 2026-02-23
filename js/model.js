@@ -24,14 +24,14 @@ function addContact(name, surname, phonenumber) {
   contacts.push(contact)
 }
 
+// saveEditedContact
 function editContact(id, name, surname, phonenumber) {
-  const contact = contacts.find(c => c.id === id)
-  console.log(id)
-  if (!contact) return
-  console.log(id)
-  contact.name = name
-  contact.surname = surname
-  contact.phonenumber = phonenumber
+  const findedContact = contacts.find(c => c.id === id)
+  if (!findedContact) return
+  findedContact.name = name
+  findedContact.surname = surname
+  findedContact.phonenumber = phonenumber
+  return findedContact
 }
 
 function addContactToFavoritesById(id) {
@@ -125,9 +125,6 @@ console.log(favorites.map(c => [c.name, c.id]))
 removeFavoriteById(1234)
 console.log(favorites.map(c => [c.name, c.id]))
 
-//
-
-console.log(contacts.length)
 contacts
 editContact(contacts[2].id, 'name', 'surname', 'phonenumber')
 contacts
@@ -135,11 +132,9 @@ editContact(333, 'name', 'surname', 'phonenumber')
 contacts
 
 // favorites
-// console.log(contacts[0].id)
 // addContactToFavoritesById(contacts[0].id)
 // favorites
 // contacts
-// console.log(findContact('Go'))
 // addFavorite('Vasya', 'F', 12393)
 // favorites
 // removeFromFavorites(12393)

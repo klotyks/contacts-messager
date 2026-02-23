@@ -40,13 +40,17 @@ function renderModal0EditContact(contact) {
   const elSecondName = document.querySelector('#secondNameEdit')
   const elPhone = document.querySelector('#phoneEdit')
 
+  // if (contact.name) {
+  //   elFirstName.value = contact.name
+  // } else {
+  //   elFirstName.value = ''
+  // }
   elFirstName.value = contact.name || ''
   elSecondName.value = contact.surname || ''
   elPhone.value = contact.phonenumber || ''
 }
 
 function renderFavoritesList(favorites) {
-  console.log(favorites)
   const elDivFavourite = document.querySelector('.favorite')
   elDivFavourite.innerHTML = ''
   for (const favorite of favorites) {
