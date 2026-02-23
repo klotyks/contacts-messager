@@ -35,6 +35,16 @@ function renderContactDetail(contact, isFav) {
   else elSpan.classList.add('non-fill')
 }
 
+function renderModal0EditContact(contact) {
+  const elFirstName = document.querySelector('#firstNameEdit')
+  const elSecondName = document.querySelector('#secondNameEdit')
+  const elPhone = document.querySelector('#phoneEdit')
+
+  elFirstName.value = contact.name || ''
+  elSecondName.value = contact.surname || ''
+  elPhone.value = contact.phonenumber || ''
+}
+
 function renderFavoritesList(favorites) {
   console.log(favorites)
   const elDivFavourite = document.querySelector('.favorite')

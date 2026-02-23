@@ -5,6 +5,8 @@ function handleAddContact(name, surname, phonenumber) {
 }
 function handleEditContact(id, name, surname, phonenumber) {
   editContact(id, name, surname, phonenumber)
+  const contact = contacts.find(c => c.id === id)
+  renderModal0EditContact(contact)
   renderContacts(contacts)
 }
 

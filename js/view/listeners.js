@@ -7,10 +7,12 @@ function onClickAddContact() {
 
 function onClickEditContact() {
   // выковырять id со страницы нужно
-  const name = document.querySelector('#firstName').value
-  const surname = document.querySelector('#secondName').value
-  const phonenumber = document.querySelector('#phone').value
-  handleEditContact(name, surname, phonenumber)
+  const name = document.querySelector('#firstNameEdit').value
+  const surname = document.querySelector('#secondNameEdit').value
+  const phonenumber = document.querySelector('#phoneEdit').value
+  const elContactDetailId = document.querySelector('.contact-detail')
+  const id = elContactDetailId.getAttribute('id')
+  handleEditContact(+id, name, surname, phonenumber)
 }
 
 function onClickCall() {
@@ -52,11 +54,11 @@ const elSpanStar = document.querySelector('#modal2 .right-align span')
 elSpanStar.onclick = onClickStar
 
 const elSpanDeleteContact = document.querySelector(
-  '#modal2 .right-align span:nth-child(3)'
+  '#modal2 .right-align span:nth-child(3)',
 )
 elSpanDeleteContact.onclick = onClickDeleteContact
 
 const elSpanEditContact = document.querySelector(
-  '#modal2 .right-align span:nth-child(2)'
+  '#modal2 .right-align span:nth-child(2)',
 )
 elSpanEditContact.onclick = onClickEditContact

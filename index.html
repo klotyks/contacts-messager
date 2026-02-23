@@ -140,6 +140,92 @@
 
     <!-- Modal Structure  -->
 
+    <div id="modal0" class="modal bottom-sheet">
+      <div class="modal-content">
+        <div class="wrap-content row">
+          <h5 class="header">Редактировать контакт</h5>
+          <form class="col s12" autocomplete="off">
+            <div class="row">
+              <div class="input-field col s12">
+                <input
+                  id="firstNameEdit"
+                  name="firstName"
+                  type="text"
+                  autocomplete="new-password"
+                />
+                <label for="firstNameEdit">Имя</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input
+                  id="secondNameEdit"
+                  name="secondName"
+                  type="text"
+                  autocomplete="new-password"
+                />
+                <label for="secondNameEdit">Фамилия</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input
+                  id="phoneEdit"
+                  name="phone"
+                  type="tel"
+                  autocomplete="new-password"
+                />
+                <label for="phoneEdit">Телефон</label>
+              </div>
+            </div>
+            <!-- <div class="row">
+              <div class="input-field col s12">
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="new-password"
+                />
+                <label for="email">E-mail</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input
+                  id="city"
+                  name="city"
+                  type="text"
+                  autocomplete="new-password"
+                />
+                <label for="city">Город</label>
+              </div>
+            </div> -->
+            <div class="row">
+              <div class="col s12 center-align wrap-form-buttons">
+                <div class="input-reset">
+                  <input type="reset" id="resetEdit" class="" />
+                  <label
+                    for="resetEdit"
+                    class="transparent teal-text waves-effect waves-light btn modal-close"
+                  >
+                    <i class="material-icons left">close</i>
+                    Отмена
+                  </label>
+                </div>
+                <a
+                  id="appEditContact"
+                  class="btn-ok waves-effect waves-light btn modal-close"
+                >
+                  <i class="material-icons left">check</i>
+                  <span>Редактировать</span>
+                </a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <div id="modal1" class="modal bottom-sheet">
       <div class="modal-content">
         <div class="wrap-content row">
@@ -238,7 +324,7 @@
                 <span class="modal-close material-symbols-outlined">star</span>
                 <!-- <span class="modal-close material-symbols-outlined">star</span> -->
                 <span
-                  href="#modal1"
+                  href="#modal0"
                   class="modal-trigger modal-close material-symbols-outlined"
                   >edit</span
                 >
