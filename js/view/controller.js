@@ -27,6 +27,7 @@ function handleUpdateRecents() {
   renderRecents(recents)
 }
 
+// догадайся как назвать
 function handleToggleFavorite(id) {
   if (isFavoriteById(id)) removeFavoriteById(id)
   else addFavoriteById(id)

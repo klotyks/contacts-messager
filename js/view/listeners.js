@@ -7,10 +7,6 @@ function onClickAddContact() {
 
 // onClickOpenContactEditing
 function onClickEditContact() {
-  // выковырять id со страницы нужно
-  // const name = document.querySelector('#firstNameEdit').value
-  // const surname = document.querySelector('#secondNameEdit').value
-  // const phonenumber = document.querySelector('#phoneEdit').value
   const elContactDetailId = document.querySelector('.contact-detail')
   const id = elContactDetailId.getAttribute('id')
   // handleOpenContactEditing
@@ -23,16 +19,25 @@ function onClickCall() {
   handleCall(elB.textContent)
 }
 
-function onClickStar() {
-  // const elSpan = document.querySelector(
-  //   '#modal2 .top.teal .row .right-align span'
-  // )
-  // elSpan.classList.add('non-fill')
-
+// onClickStarAddToFavorites
+// onClickStarRemoveFromFavorites
+// сам допиши
+function onClickStarAddToFavorites() {
   const elContactDetailId = document.querySelector('.contact-detail')
   const id = elContactDetailId.getAttribute('id')
   handleToggleFavorite(+id)
 }
+function onClickStarRemoveFromFavorites() {
+  const elContactDetailId = document.querySelector('.contact-detail')
+  const id = elContactDetailId.getAttribute('id')
+  handleToggleFavorite(+id)
+}
+
+// function onClickStar() {
+//   const elContactDetailId = document.querySelector('.contact-detail')
+//   const id = elContactDetailId.getAttribute('id')
+//   handleToggleFavorite(+id)
+// }
 
 function onClickDeleteContact() {
   const elContactDetailId = document.querySelector('.contact-detail')
@@ -51,15 +56,15 @@ elButtonAddContact.onclick = onClickAddContact
 const elLiCall = document.querySelector('.contact-detail li')
 elLiCall.onclick = onClickCall
 
-const elSpanStar = document.querySelector('#modal2 .right-align span')
-elSpanStar.onclick = onClickStar
+// const elSpanStar = document.querySelector('#modal2 .right-align span')
+// elSpanStar.onclick = onClickStar
 
 const elSpanDeleteContact = document.querySelector(
-  '#modal2 .right-align span:nth-child(3)',
+  '#modal2 .right-align span:nth-child(3)'
 )
 elSpanDeleteContact.onclick = onClickDeleteContact
 
 const elSpanEditContact = document.querySelector(
-  '#modal2 .right-align span:nth-child(2)',
+  '#modal2 .right-align span:nth-child(2)'
 )
 elSpanEditContact.onclick = onClickEditContact

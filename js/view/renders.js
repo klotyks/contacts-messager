@@ -30,24 +30,28 @@ function renderContactDetail(contact, isFav) {
   elDivContactDetail.setAttribute('id', contact.id)
   elH5Name.textContent = contact.name + ' ' + contact.surname
   elB.textContent = contact.phonenumber
-  const elSpan = document.querySelector('#modal2 .right-align span')
-  if (isFav) elSpan.classList.remove('non-fill')
-  else elSpan.classList.add('non-fill')
+  const elSpanStar = document.querySelector('#modal2 .right-align span')
+  if (isFav) {
+    elSpanStar.classList.remove('non-fill')
+    elSpanStar.onclick = onClickStarRemoveFromFavorites
+  } else {
+    elSpanStar.classList.add('non-fill')
+    elSpanStar.onclick = onClickStarAddToFavorites
+  }
 }
 
 function renderModal0EditContact(contact) {
   const elFirstName = document.querySelector('#firstNameEdit')
   const elSecondName = document.querySelector('#secondNameEdit')
   const elPhone = document.querySelector('#phoneEdit')
-
-  // if (contact.name) {
-  //   elFirstName.value = contact.name
-  // } else {
-  //   elFirstName.value = ''
-  // }
   elFirstName.value = contact.name || ''
   elSecondName.value = contact.surname || ''
   elPhone.value = contact.phonenumber || ''
+  requestAnimationFrame(() => {
+    elFirstName.focus()
+    elSecondName.focus()
+    elPhone.focus()
+  })
 }
 
 function renderFavoritesList(favorites) {
