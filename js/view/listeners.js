@@ -14,7 +14,7 @@ function onClickEditContact() {
   const elContactDetailId = document.querySelector('.contact-detail')
   const id = elContactDetailId.getAttribute('id')
   // handleOpenContactEditing
-  handleEditContact(+id)
+  handleSaveEditedContact(+id)
 }
 
 function onClickCall() {
@@ -42,7 +42,7 @@ function onClickDeleteContact() {
 
 function onClickOpenDetails(e) {
   const id = e.currentTarget.id
-  handleOpenDetails(+id)
+  handleOpenContactDetails(+id)
 }
 
 const elButtonAddContact = document.querySelector('#appAddContact')
@@ -55,11 +55,11 @@ const elSpanStar = document.querySelector('#modal2 .right-align span')
 elSpanStar.onclick = onClickStar
 
 const elSpanDeleteContact = document.querySelector(
-  '#modal2 .right-align span:nth-child(3)'
+  '#modal2 .right-align span:nth-child(3)',
 )
 elSpanDeleteContact.onclick = onClickDeleteContact
 
 const elSpanEditContact = document.querySelector(
-  '#modal2 .right-align span:nth-child(2)'
+  '#modal2 .right-align span:nth-child(2)',
 )
 elSpanEditContact.onclick = onClickEditContact

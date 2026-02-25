@@ -5,16 +5,14 @@ function handleAddContact(name, surname, phonenumber) {
 }
 
 // handleOpenContactEditing
-// handleSaveEditedContact
 
-function handleEditContact(id) {
-  // const contact = editContact(id, name, surname, phonenumber)
+function handleSaveEditedContact(id) {
+  const contact = getContactyId(id)
   renderModal0EditContact(contact)
   renderContacts(contacts)
 }
 
-// handleOpenContactDetails
-function handleOpenDetails(id) {
+function handleOpenContactDetails(id) {
   selectContactById(id)
   const isFavorite = favorites.some(fav => fav.id === id)
   renderContactDetail(selectedContact, isFavorite)

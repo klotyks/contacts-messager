@@ -19,13 +19,16 @@ function createRecent(phonenumber) {
   }
 }
 
+function getContactyId(id) {
+  return contacts.find(c => c.id === id)
+}
+
 function addContact(name, surname, phonenumber) {
   const contact = createContact(name, surname, phonenumber)
   contacts.push(contact)
 }
 
-// saveEditedContact
-function editContact(id, name, surname, phonenumber) {
+function saveEditedContact(id, name, surname, phonenumber) {
   const findedContact = contacts.find(c => c.id === id)
   if (!findedContact) return
   findedContact.name = name
@@ -82,7 +85,7 @@ function removeFromContactById(id) {
 function findContact(searchText) {
   let props = ['name', 'surname']
   return contacts.filter(contact =>
-    props.some(p => contact[p].includes(searchText))
+    props.some(p => contact[p].includes(searchText)),
   )
 }
 
@@ -126,9 +129,9 @@ removeFavoriteById(1234)
 console.log(favorites.map(c => [c.name, c.id]))
 
 contacts
-editContact(contacts[2].id, 'name', 'surname', 'phonenumber')
+saveEditedContact(contacts[2].id, 'name', 'surname', 'phonenumber')
 contacts
-editContact(333, 'name', 'surname', 'phonenumber')
+saveEditedContact(333, 'name', 'surname', 'phonenumber')
 contacts
 
 // favorites
