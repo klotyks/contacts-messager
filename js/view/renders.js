@@ -44,6 +44,8 @@ function renderModal0EditContact(contact) {
   const elFirstName = document.querySelector('#firstNameEdit')
   const elSecondName = document.querySelector('#secondNameEdit')
   const elPhone = document.querySelector('#phoneEdit')
+  const elForm = document.querySelector('#modal0 form')
+  elForm.dataset.id = contact.id
   elFirstName.value = contact.name || ''
   elSecondName.value = contact.surname || ''
   elPhone.value = contact.phonenumber || ''

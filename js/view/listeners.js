@@ -14,11 +14,12 @@ function onClickEditContact() {
 }
 
 function onClickCompleteEdit() {
-  // console.log('134')
+  const elForm = document.querySelector('#modal0 form')
   const name = document.querySelector('#firstNameEdit').value
   const surname = document.querySelector('#secondNameEdit').value
   const phonenumber = document.querySelector('#phoneEdit').value
-  handleCompleteEdit(name, surname, phonenumber)
+  const id = elForm.dataset.id
+  handleCompleteEdit(+id, name, surname, phonenumber)
 }
 
 function onClickCall() {
@@ -56,12 +57,12 @@ const elLiCall = document.querySelector('.contact-detail li')
 elLiCall.onclick = onClickCall
 
 const elSpanDeleteContact = document.querySelector(
-  '#modal2 .right-align span:nth-child(3)',
+  '#modal2 .right-align span:nth-child(3)'
 )
 elSpanDeleteContact.onclick = onClickDeleteContact
 
 const elSpanEditContact = document.querySelector(
-  '#modal2 .right-align span:nth-child(2)',
+  '#modal2 .right-align span:nth-child(2)'
 )
 elSpanEditContact.onclick = onClickEditContact
 

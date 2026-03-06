@@ -1,4 +1,3 @@
-let editingContactId = null
 function handleAddContact(name, surname, phonenumber) {
   addContact(name, surname, phonenumber)
   renderContactAdder()
@@ -14,21 +13,18 @@ function handleAddContact(name, surname, phonenumber) {
 // }
 
 // function handleCompleteEdit(name, surname, phonenumber) {
-//   editingContactId = id
 //   const contact = getContactyId(id)
 //   saveEditedContact(name, surname, phonenumber)
 //   renderContacts(contacts)
 // }
 
 function handleSaveEditedContact(id) {
-  editingContactId = id
   const contact = getContactById(id)
   renderModal0EditContact(contact)
 }
 
-function handleCompleteEdit(name, surname, phonenumber) {
-  saveEditedContact(editingContactId, name, surname, phonenumber)
-  editingContactId = null
+function handleCompleteEdit(id, name, surname, phonenumber) {
+  saveEditedContact(id, name, surname, phonenumber)
   renderContacts(contacts)
 }
 
