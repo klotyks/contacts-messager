@@ -19,7 +19,7 @@ function createRecent(phonenumber) {
   }
 }
 
-function getContactyId(id) {
+function getContactById(id) {
   return contacts.find(c => c.id === id)
 }
 
@@ -34,6 +34,9 @@ function saveEditedContact(id, name, surname, phonenumber) {
   findedContact.name = name
   findedContact.surname = surname
   findedContact.phonenumber = phonenumber
+  // findedContact.name = contact.name
+  // findedContact.surname = contact.surname
+  // findedContact.phonenumber = contact.phonenumber
   return findedContact
 }
 

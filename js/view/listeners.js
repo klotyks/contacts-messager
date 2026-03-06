@@ -13,31 +13,30 @@ function onClickEditContact() {
   handleSaveEditedContact(+id)
 }
 
+function onClickCompleteEdit() {
+  // console.log('134')
+  const name = document.querySelector('#firstNameEdit').value
+  const surname = document.querySelector('#secondNameEdit').value
+  const phonenumber = document.querySelector('#phoneEdit').value
+  handleCompleteEdit(name, surname, phonenumber)
+}
+
 function onClickCall() {
   const elLi = document.querySelector('.contact-detail li')
   const elB = elLi.querySelector('b')
   handleCall(elB.textContent)
 }
 
-// onClickStarAddToFavorites
-// onClickStarRemoveFromFavorites
-// сам допиши
 function onClickStarAddToFavorites() {
   const elContactDetailId = document.querySelector('.contact-detail')
   const id = elContactDetailId.getAttribute('id')
-  handleToggleFavorite(+id)
+  handleAddFavourite(+id)
 }
 function onClickStarRemoveFromFavorites() {
   const elContactDetailId = document.querySelector('.contact-detail')
   const id = elContactDetailId.getAttribute('id')
-  handleToggleFavorite(+id)
+  handleRemoveFavorite(+id)
 }
-
-// function onClickStar() {
-//   const elContactDetailId = document.querySelector('.contact-detail')
-//   const id = elContactDetailId.getAttribute('id')
-//   handleToggleFavorite(+id)
-// }
 
 function onClickDeleteContact() {
   const elContactDetailId = document.querySelector('.contact-detail')
@@ -56,15 +55,15 @@ elButtonAddContact.onclick = onClickAddContact
 const elLiCall = document.querySelector('.contact-detail li')
 elLiCall.onclick = onClickCall
 
-// const elSpanStar = document.querySelector('#modal2 .right-align span')
-// elSpanStar.onclick = onClickStar
-
 const elSpanDeleteContact = document.querySelector(
-  '#modal2 .right-align span:nth-child(3)'
+  '#modal2 .right-align span:nth-child(3)',
 )
 elSpanDeleteContact.onclick = onClickDeleteContact
 
 const elSpanEditContact = document.querySelector(
-  '#modal2 .right-align span:nth-child(2)'
+  '#modal2 .right-align span:nth-child(2)',
 )
 elSpanEditContact.onclick = onClickEditContact
+
+const elButtonCompleteEdit = document.querySelector('#appEditContact span')
+elButtonCompleteEdit.onclick = onClickCompleteEdit
